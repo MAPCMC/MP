@@ -37,25 +37,24 @@ export const theme = {
     heading: 1.125
   },
   colors: {
-    text: '#4b4b4a',
+    black: '#000',
+    text: '#1A1616',
     background: '#fff',
+    white: '#fff',
     primary: '#cc6600',
     secondary: '#ee953a',
     muted: '#f4f2ef'
   },
   links: {
     nav: {
-      color: 'muted',
       opacity: 0.7,
       '&:visited': {
-        color: 'muted' 
+        opacity: 1
       },
       '&:hover': {
-        color: 'background',
         opacity: 1 
       },
       '&:active': {
-        color: 'background',
         opacity: 1
       },
       p: 2

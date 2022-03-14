@@ -1,16 +1,16 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import Layout from "../components/Layout"
+import { NavLink } from "theme-ui"
 
-// markup
 const NotFoundPage = () => {
   return (
-    <>
+    <div>
       <p>
         Sorry 😔 we couldn’t find what you were looking for.
       </p>
-      <Link to="/">Go home</Link>
-    </>
+      <NavLink href="/" backgroundColor='primary'>
+        <i className='fa fa-home' />
+      </NavLink>
+    </div>
   )
 }
 
