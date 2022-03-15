@@ -9,7 +9,8 @@ const Hexagon = (props: any) => {
         visibility: 'hidden',
         transform: 'rotate(120deg)',
         width: '200px',
-        height: '300px'
+        height: '300px',
+        ...props.boxSx
       }}
     >
       <Box

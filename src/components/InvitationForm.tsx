@@ -3,11 +3,18 @@ import { Box, Label, Input, Heading } from 'theme-ui'
 
 const InvitationForm = () => {
   const invitation = 'enter your invitation code'
-
+  const [input, setInput] = React.useState(false)
   const [code, setCode] = React.useState('')
 
+  if (!input) {
+    return (
+      <Heading as='h2' onClick={() => setInput(true)}>
+        <i>{invitation}</i>
+      </Heading>
+    )
+  }
   return (
-    <Box sx={{ width: '400px' }}>
+    <Box>
       <Label htmlFor="code" sx={{ visibility: 'collapse' }}>
         {invitation}
       </Label>
