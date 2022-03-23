@@ -6,40 +6,39 @@ media_folder: "src/assets/images"
 public_folder: "static"
 
 collections:
-  - label: "texts"
-    name: "texts"
+  - name: "text"
+    label: "text on site"
     files:
       - label: "about"
         name: "about"
-        file: "content/about"
+        file: "content/about.yml"
         fields:
           - { label: name, name: name, widget: string }
           - { label: introduction, name: introduction, widget: markdown }
-          - { label: cvAccess, name: cvAccess, widget: string }
       - label: "footer"
         name: "footer"
-        file: "content/footer"
+        file: "content/footer.yml"
         fields:
           - { label: copyright, name: copyright, widget: string }
-  - label: "contacts"
-    name: "contacts"
-    folder: "_contacts/"
+  - name: "contact"
+    label: "contact"
+    folder: "content/_contact/"
     create: true
     fields:
       - { label: icon, name: icon, widget: string }
       - { label: link, name: link, widget: string }
       - { label: title, name: title, widget: string }
       - { label: handle, name: handle, widget: string, required: false }
-  - label: "labels"
-    name: "labels"
-    folder: "_labels/"
+  - label: "label"
+    name: "label"
+    folder: "content/_label/"
     create: true
     fields:
       - { label: icon, name: icon, widget: string }
       - { label: title, name: title, widget: string }
   - label: "experience"
     name: "experience"
-    folder: "_experience/"
+    folder: "content/_experience/"
     create: true
     fields:
       - { label: from, name: from, widget: datetime }
@@ -51,7 +50,7 @@ collections:
         label: labels,
         name: labels,
         widget: relation,
-        collection: labels,
-        valueField: labels.*,
-        searchFields: [labels.title]
+        collection: label,
+        valueField: label.*,
+        searchFields: [label.title]
       }
