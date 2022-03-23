@@ -1,0 +1,57 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/images"
+public_folder: "static"
+
+collections:
+  - label: "texts"
+    name: "texts"
+    files:
+      - label: "about"
+        name: "about"
+        file: "content/about"
+        fields:
+          - { label: name, name: name, widget: string }
+          - { label: introduction, name: introduction, widget: markdown }
+          - { label: cvAccess, name: cvAccess, widget: string }
+      - label: "footer"
+        name: "footer"
+        file: "content/footer"
+        fields:
+          - { label: copyright, name: copyright, widget: string }
+  - label: "contacts"
+    name: "contacts"
+    folder: "_contacts/"
+    create: true
+    fields:
+      - { label: icon, name: icon, widget: string }
+      - { label: link, name: link, widget: string }
+      - { label: title, name: title, widget: string }
+      - { label: handle, name: handle, widget: string, required: false }
+  - label: "labels"
+    name: "labels"
+    folder: "_labels/"
+    create: true
+    fields:
+      - { label: icon, name: icon, widget: string }
+      - { label: title, name: title, widget: string }
+  - label: "experience"
+    name: "experience"
+    folder: "_experience/"
+    create: true
+    fields:
+      - { label: from, name: from, widget: datetime }
+      - { label: to, name: to, widget: datetime }
+      - { label: title, name: title, widget: string }
+      - { label: memo, name: memo, widget: markdown }
+      - { label: link, name: link, widget: string, required: false }
+      - {
+        label: labels,
+        name: labels,
+        widget: relation,
+        collection: labels,
+        valueField: labels.*,
+        searchFields: [labels.title]
+      }
