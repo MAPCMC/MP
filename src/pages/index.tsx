@@ -78,25 +78,24 @@ const IndexPage = ({ data }: { data: { textYaml: textYamlProps }}) => {
                 />
               </Flex>
             </ParallaxLayer>
-            <ParallaxLayer offset={0} speed={0}>
+            <ParallaxLayer offset={0.6} speed={0}>
               <Flex
                 sx={{
                   height: '100%',
                   flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'flex-end'
+                  alignItems: 'center'
                 }}
               >
                 <Paragraph sx={{ maxWidth: '800px', textAlign: 'center', mb: 4 }}>
                   {data?.textYaml?.introduction}
                 </Paragraph>
                 {/* <InvitationForm /> */}
-                <Box
+                {/* <Box
                   sx={{
                     height: '30vh',
                     border: '1px solid grey'
                   }}
-                />
+                /> */}
               </Flex>
             </ParallaxLayer>
             {/* <InvitedInfo /> */}
