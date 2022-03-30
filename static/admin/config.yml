@@ -7,47 +7,47 @@ public_folder: "static"
 
 collections:
   - name: "text"
-    label: "text on site"
+    delete: false
     files:
-      - label: "about"
-        name: "about"
-        file: "content/about.yml"
+      - name: text
+        file: "content/text.yml"
         fields:
-          - { label: name, name: name, widget: string }
-          - { label: introduction, name: introduction, widget: markdown }
-      - label: "footer"
-        name: "footer"
-        file: "content/footer.yml"
-        fields:
-          - { label: copyright, name: copyright, widget: string }
+          - name: languages
+            widget: list
+            fields:
+            - { name: language, widget: string }
+            - { name: siteName, widget: string }
+            - { name: introduction, widget: text }
+            - { name: copyright, widget: string }
   - name: "contact"
-    label: "contact"
+    label: "contacts"
+    desciption: "ways of contacting me"
     folder: "content/_contact/"
     create: true
     fields:
-      - { label: icon, name: icon, widget: string }
-      - { label: link, name: link, widget: string }
-      - { label: title, name: title, widget: string }
-      - { label: handle, name: handle, widget: string, required: false }
-  - label: "label"
-    name: "label"
+      - { name: icon, widget: string }
+      - { name: link, widget: string }
+      - { name: title, widget: string }
+      - { name: handle, widget: string, required: false }
+  - name: "label"
+    label: "labels"
+    description: "labels to emphasise and link other content"
     folder: "content/_label/"
     create: true
     fields:
-      - { label: icon, name: icon, widget: string }
-      - { label: title, name: title, widget: string }
+      - { name: icon, widget: string }
+      - { name: title, widget: string }
   - label: "experience"
     name: "experience"
     folder: "content/_experience/"
     create: true
     fields:
-      - { label: from, name: from, widget: datetime }
-      - { label: to, name: to, widget: datetime }
-      - { label: title, name: title, widget: string }
-      - { label: memo, name: memo, widget: markdown }
-      - { label: link, name: link, widget: string, required: false }
+      - { name: from, widget: datetime }
+      - { name: to, widget: datetime }
+      - { name: title, widget: string }
+      - { name: memo, widget: markdown }
+      - { name: link, widget: string, required: false }
       - {
-        label: labels,
         name: labels,
         widget: relation,
         collection: label,

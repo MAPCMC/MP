@@ -1,4 +1,5 @@
 import * as React from "react"
+import { graphql } from "gatsby"
 import "../assets/fontawesome/css/all.css"
 import hoofd from "../assets/images/hoofd.png"
 import hoofdLach from "../assets/images/hoofdLach.png"
@@ -10,12 +11,18 @@ import ExplodingMenu from '../components/ExplodingMenu'
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
 import { Flex, Box, Paragraph, Container } from 'theme-ui'
 
-const IndexPage = () => {
+interface textYamlProps {
+  siteName: string
+  introduction: string
+  copyright: string
+}
+
+const IndexPage = ({ data }: { data: { textYaml: textYamlProps }}) => {
   const parallax = React.useRef<null | IParallax>(null)
 
   return (
     <>
-      <title>Maarten Peene</title>
+      <title>{data?.textYaml?.siteName}</title>
       <Container sx={{ height: '100%', minHeight: '100vh', position: 'relative' }}>
 
         <Flex
@@ -23,7 +30,7 @@ const IndexPage = () => {
           sx={{ zIndex: 2, p: 2, position: 'absolute', top: 0, left: 0, alignItems: 'center' }}
         >
           <CarrotBox onClick={() => parallax.current?.scrollTo(0)} style={{ cursor: 'pointer' }} />
-          <Box pl={2}>Maarten Peene</Box>
+          <Box pl={2}>{data?.textYaml?.siteName}</Box>
         </Flex>
 
         <Box
@@ -38,7 +45,7 @@ const IndexPage = () => {
             right: 0,
             zIndex: 2
           }}>
-          <Paragraph>© M.A. Peene 2022</Paragraph>
+          <Paragraph>{data?.textYaml?.copyright}</Paragraph>
         </Box>
 
 
@@ -81,9 +88,7 @@ const IndexPage = () => {
                 }}
               >
                 <Paragraph sx={{ maxWidth: '800px', textAlign: 'center', mb: 4 }}>
-                  Hi, I'm Maarten, a full-stack web developer looking for
-                  new opportunities to better this world and challenge myself as
-                  a professional coder. Don't be shy. Get to know me!
+                  {data?.textYaml?.introduction}
                 </Paragraph>
                 {/* <InvitationForm /> */}
                 <Box
@@ -101,5 +106,15 @@ const IndexPage = () => {
     </>
   )
 }
+
+export const query = graphql`
+  query MyQuery {
+    textYaml(language: {eq: "nl"}) {
+      introduction
+      siteName
+      copyright
+    }
+  }
+`
 
 export default IndexPage
