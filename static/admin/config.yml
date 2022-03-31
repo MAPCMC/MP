@@ -36,7 +36,7 @@ collections:
       - { label: language, name: language, widget: string }
       - { label: title, name: title, widget: string }
       - { label: memo, name: memo, widget: markdown }
-      - { label: tags, name: tags, widget: relation, collection: tag, valueField: tag.*, searchFields: [tag.title], required: false }
+      - { label: tags, name: tags, widget: relation, collection: tag, value_field: title, search_fields: [title], multiple: true, required: false }
   - name: "experience"
     label: "experience"
     description: "work and education experience in development"
@@ -49,7 +49,7 @@ collections:
       - { label: title, name: title, widget: string }
       - { label: memo, name: memo, widget: markdown }
       - { label: link, name: link, widget: string, required: false }
-      - { label: tags, name: tags, widget: relation, collection: tag, valueField: tag.*, searchFields: [tag.title], required: false }
+      - { label: tags, name: tags, widget: relation, collection: tag, value_field: title, search_fields: [title], multiple: true, required: false }
   - name: "contact"
     label: "contact"
     desciption: "ways of contacting me"
