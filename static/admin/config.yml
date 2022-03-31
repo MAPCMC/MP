@@ -9,24 +9,24 @@ collections:
   - name: "settings"
     label: "settings"
     files:
-      - name: text
-        label: text
-        file: "content/text.yml"
+      - name: "text"
+        label: "text"
+        file: "content/allText.yml"
         fields:
           - name: language
-            label: language
+            label: general text per language
             widget: list
             allow_add: true
             summary: "{{fields.language}}"
             fields:
-            - { label: language, name: language, widget: string }
-            - { label: siteName, name: siteName, widget: string, required: false }
-            - { label: introduction, name: introduction, widget: text, required: false }
-            - { label: aboutHeader, name: aboutHeader, widget: string, required: false }
-            - { label: experienceHeader, name: experienceHeader, widget: string, required: false }
-            - { label: contactHeader, name: contactHeader, widget: string, required: false }
-            - { label: contactIntroduction, name: contactIntroduction, widget: text, required: false }
-            - { label: copyright, name: copyright, widget: string, required: false }
+              - { label: language, name: language, widget: string }
+              - { label: siteName, name: siteName, widget: string, required: false }
+              - { label: introduction, name: introduction, widget: text, required: false }
+              - { label: aboutHeader, name: aboutHeader, widget: string, required: false }
+              - { label: experienceHeader, name: experienceHeader, widget: string, required: false }
+              - { label: contactHeader, name: contactHeader, widget: string, required: false }
+              - { label: contactIntroduction, name: contactIntroduction, widget: text, required: false }
+              - { label: copyright, name: copyright, widget: string, required: false }
   - name: "about"
     label: "about"
     description: "more info about myself/work/life"
