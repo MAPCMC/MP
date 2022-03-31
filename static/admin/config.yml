@@ -18,13 +18,13 @@ collections:
             widget: list
             fields:
             - { name: language, widget: string }
-            - { name: siteName, widget: string }
-            - { name: introduction, widget: text }
-            - { name: aboutHeader, widget: string }
-            - { name: experienceHeader, widget: string }
-            - { name: contactHeader, widget: string }
-            - { name: contactIntroduction, widget: text }
-            - { name: copyright, widget: string }
+            - { name: siteName, widget: string, required: false }
+            - { name: introduction, widget: text, required: false }
+            - { name: aboutHeader, widget: string, required: false }
+            - { name: experienceHeader, widget: string, required: false }
+            - { name: contactHeader, widget: string, required: false }
+            - { name: contactIntroduction, widget: text, required: false }
+            - { name: copyright, widget: string, required: false }
   - name: "about"
     label: "about"
     description: "more info about myself/work/life"
@@ -34,7 +34,7 @@ collections:
       - { name: language, widget: string }
       - { name: title, widget: string }
       - { name: memo, widget: markdown }
-      - { name: tags, widget: relation, collection: tag, valueField: tag.*, searchFields: [tag.title] }
+      - { name: tags, widget: relation, collection: tag, valueField: tag.*, searchFields: [tag.title], required: false }
   - name: "experience"
     label: "experience"
     description: "work and education experience in development"
@@ -47,7 +47,7 @@ collections:
       - { name: title, widget: string }
       - { name: memo, widget: markdown }
       - { name: link, widget: string, required: false }
-      - { name: tags, widget: relation, collection: tag, valueField: tag.*, searchFields: [tag.title] }
+      - { name: tags, widget: relation, collection: tag, valueField: tag.*, searchFields: [tag.title], required: false }
   - name: "contact"
     label: "contact"
     desciption: "ways of contacting me"
@@ -60,10 +60,12 @@ collections:
       - { name: title, widget: string }
       - { name: handle, widget: string, required: false }
   - name: "tag"
-    label: "tags"
+    label: "tag"
     description: "tags to emphasise and link other content"
     folder: "content/_tag/"
     create: true
     fields:
-      - { name: icon, widget: string }
+      - { name: language, widget: string }
+      - { name: icon, widget: string, required: false }
+      - { name: animation, widget: string, required: false }
       - { name: title, widget: string }
