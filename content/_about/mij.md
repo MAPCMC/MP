@@ -10,4 +10,9 @@ memo: >-
 
 
   Bovenal sociaal, creatief en enthousiast.
+tags:
+  - transman
+  - kamperen
+  - theater & improvisatie
+  - schaken
 ---
