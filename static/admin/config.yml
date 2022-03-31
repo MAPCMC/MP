@@ -11,7 +11,7 @@ collections:
     files:
       - name: "text"
         label: "text"
-        file: "content/allText.yml"
+        file: "content/text.yml"
         fields:
           - name: language
             label: general text per language
