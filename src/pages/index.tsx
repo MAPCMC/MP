@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 import "../assets/fontawesome/css/all.css"
 import hoofd from "../assets/images/hoofd.png"
 import hoofdLach from "../assets/images/hoofdLach.png"
@@ -11,18 +11,19 @@ import ExplodingMenu from '../components/ExplodingMenu'
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
 import { Flex, Box, Paragraph, Container } from 'theme-ui'
 
-interface textYamlProps {
-  siteName: string
-  introduction: string
-  copyright: string
-}
+// interface textYamlProps {
+//   siteName: string
+//   introduction: string
+//   copyright: string
+// }
 
-const IndexPage = ({ data }: { data: { textYaml: textYamlProps }}) => {
+// const IndexPage = ({ data }: { data: { textYaml: textYamlProps }}) => {
+const IndexPage = () => {
   const parallax = React.useRef<null | IParallax>(null)
 
   return (
     <>
-      <title>{data?.textYaml?.siteName}</title>
+      {/* <title>{data?.textYaml?.siteName}</title> */}
       <Container sx={{ height: '100%', minHeight: '100vh', position: 'relative' }}>
 
         <Flex
@@ -30,7 +31,7 @@ const IndexPage = ({ data }: { data: { textYaml: textYamlProps }}) => {
           sx={{ zIndex: 2, p: 2, position: 'absolute', top: 0, left: 0, alignItems: 'center' }}
         >
           <CarrotBox onClick={() => parallax.current?.scrollTo(0)} style={{ cursor: 'pointer' }} />
-          <Box pl={2}>{data?.textYaml?.siteName}</Box>
+          {/* <Box pl={2}>{data?.textYaml?.siteName}</Box> */}
         </Flex>
 
         <Box
@@ -45,7 +46,7 @@ const IndexPage = ({ data }: { data: { textYaml: textYamlProps }}) => {
             right: 0,
             zIndex: 2
           }}>
-          <Paragraph>{data?.textYaml?.copyright}</Paragraph>
+          {/* <Paragraph>{data?.textYaml?.copyright}</Paragraph> */}
         </Box>
 
 
@@ -87,7 +88,7 @@ const IndexPage = ({ data }: { data: { textYaml: textYamlProps }}) => {
                 }}
               >
                 <Paragraph sx={{ maxWidth: '800px', textAlign: 'center', mb: 4 }}>
-                  {data?.textYaml?.introduction}
+                  {/* {data?.textYaml?.introduction} */}
                 </Paragraph>
                 {/* <InvitationForm /> */}
                 {/* <Box
@@ -106,14 +107,14 @@ const IndexPage = ({ data }: { data: { textYaml: textYamlProps }}) => {
   )
 }
 
-export const query = graphql`
-  query MyQuery {
-    textYaml(language: {eq: "nl"}) {
-      introduction
-      siteName
-      copyright
-    }
-  }
-`
+// export const query = graphql`
+//   query MyQuery {
+//     textYaml(language: {eq: "nl"}) {
+//       introduction
+//       siteName
+//       copyright
+//     }
+//   }
+// `
 
 export default IndexPage
