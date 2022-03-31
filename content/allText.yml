@@ -11,3 +11,13 @@ language:
       complete cv en onze samenwerkingsmogelijkheden? Schroom niet en laat van
       je horen!
     copyright: © M.A. Peene 2022
+  - language: en
+    siteName: Maarten Peene
+    introduction: Hello, my name is Maarten. I am a full-stack JS developer who
+      thinks he can better the world through web applications. As a programmer,
+      I aim to be effective, original and a clear communicator.
+    aboutHeader: About
+    experienceHeader: Experience & education
+    contactHeader: Contact
+    contactIntroduction: Contact me! Do it. Do it now.
+    copyright: © M.A. Peene 2022
