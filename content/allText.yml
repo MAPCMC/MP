@@ -1,0 +1,13 @@
+language:
+  - language: nl
+    siteName: Maarten Peene
+    introduction: Hallo, mijn naam is Maarten. Ik ben een full-stack JS developer
+      die denkt de wereld te kunnen verbeteren met web applicaties.
+      Effectiviteit, originaliteit en een helder verhaal staan hierbij centraal.
+    aboutHeader: Over
+    experienceHeader: Ervaring & scholing
+    contactHeader: Contact
+    contactIntroduction: Een uitdagende klus in de aanbieding en benieuwd naar m'n
+      complete cv en onze samenwerkingsmogelijkheden? Schroom niet en laat van
+      je horen!
+    copyright: © M.A. Peene 2022
