@@ -17,57 +17,58 @@ collections:
           - name: languages
             label: languages
             widget: list
+            allow_add: true
             summary: "{{fields.language}}"
             fields:
-            - { name: language, widget: string }
-            - { name: siteName, widget: string, required: false }
-            - { name: introduction, widget: text, required: false }
-            - { name: aboutHeader, widget: string, required: false }
-            - { name: experienceHeader, widget: string, required: false }
-            - { name: contactHeader, widget: string, required: false }
-            - { name: contactIntroduction, widget: text, required: false }
-            - { name: copyright, widget: string, required: false }
+            - { label: language, name: language, widget: string }
+            - { label: siteName, name: siteName, widget: string, required: false }
+            - { label: introduction, name: introduction, widget: text, required: false }
+            - { label: aboutHeader, name: aboutHeader, widget: string, required: false }
+            - { label: experienceHeader, name: experienceHeader, widget: string, required: false }
+            - { label: contactHeader, name: contactHeader, widget: string, required: false }
+            - { label: contactIntroduction, name: contactIntroduction, widget: text, required: false }
+            - { label: copyright, name: copyright, widget: string, required: false }
   - name: "about"
     label: "about"
     description: "more info about myself/work/life"
     folder: "content/_about/"
     create: true
     fields:
-      - { name: language, widget: string }
-      - { name: title, widget: string }
-      - { name: memo, widget: markdown }
-      - { name: tags, widget: relation, collection: tag, valueField: tag.*, searchFields: [tag.title], required: false }
+      - { label: language, name: language, widget: string }
+      - { label: title, name: title, widget: string }
+      - { label: memo, name: memo, widget: markdown }
+      - { label: tags, name: tags, widget: relation, collection: tag, valueField: tag.*, searchFields: [tag.title], required: false }
   - name: "experience"
     label: "experience"
     description: "work and education experience in development"
     folder: "content/_experience/"
     create: true
     fields:
-      - { name: language, widget: string }
-      - { name: from, widget: datetime }
-      - { name: to, widget: datetime }
-      - { name: title, widget: string }
-      - { name: memo, widget: markdown }
-      - { name: link, widget: string, required: false }
-      - { name: tags, widget: relation, collection: tag, valueField: tag.*, searchFields: [tag.title], required: false }
+      - { label: language, name: language, widget: string }
+      - { label: from, name: from, widget: datetime }
+      - { label: to, name: to, widget: datetime }
+      - { label: title, name: title, widget: string }
+      - { label: memo, name: memo, widget: markdown }
+      - { label: link, name: link, widget: string, required: false }
+      - { label: tags, name: tags, widget: relation, collection: tag, valueField: tag.*, searchFields: [tag.title], required: false }
   - name: "contact"
     label: "contact"
     desciption: "ways of contacting me"
     folder: "content/_contact/"
     create: true
     fields:
-      - { name: language, widget: string }
-      - { name: icon, widget: string }
-      - { name: link, widget: string }
-      - { name: title, widget: string }
-      - { name: handle, widget: string, required: false }
+      - { label: language, name: language, widget: string }
+      - { label: icon, name: icon, widget: string }
+      - { label: link, name: link, widget: string }
+      - { label: title, name: title, widget: string }
+      - { label: handle, name: handle, widget: string, required: false }
   - name: "tag"
     label: "tag"
     description: "tags to emphasise and link other content"
     folder: "content/_tag/"
     create: true
     fields:
-      - { name: language, widget: string }
-      - { name: icon, widget: string, required: false }
-      - { name: animation, widget: string, required: false }
-      - { name: title, widget: string }
+      - { label: language, name: language, widget: string }
+      - { label: icon, name: icon, widget: string, required: false }
+      - { label: animation, name: animation, widget: string, required: false }
+      - { label: title, name: title, widget: string }
