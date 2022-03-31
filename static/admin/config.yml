@@ -8,13 +8,11 @@ public_folder: "static"
 collections:
   - name: "settings"
     label: "settings"
-    delete: false
     files:
       - name: text
         label: text
         file: "content/text.yml"
         fields:
-          - { label: title, name: 'title', widget: string }
           - name: language
             label: language
             widget: list
