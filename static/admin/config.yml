@@ -15,7 +15,9 @@ collections:
         file: "content/text.yml"
         fields:
           - name: languages
+            label: languages
             widget: list
+            summary: "{{fields.language}}"
             fields:
             - { name: language, widget: string }
             - { name: siteName, widget: string, required: false }
