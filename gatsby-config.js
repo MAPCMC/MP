@@ -20,6 +20,9 @@ module.exports = {
       }
     },
     "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-transformer-yaml"
+    },
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
@@ -30,6 +33,13 @@ module.exports = {
         "path": "./src/assets/images/"
       },
       __key: "images"
+    }, {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "content",
+        "path": `${__dirname}/content/`
+      },
+      __key: "content"
     }, {
       resolve: 'gatsby-source-filesystem',
       options: {

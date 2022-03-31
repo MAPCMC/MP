@@ -7,50 +7,63 @@ public_folder: "static"
 
 collections:
   - name: "text"
-    label: "text on site"
+    label: "text"
+    delete: false
     files:
-      - label: "about"
-        name: "about"
-        file: "content/about.yml"
+      - name: text
+        label: text
+        file: "content/text.yml"
         fields:
-          - { label: name, name: name, widget: string }
-          - { label: introduction, name: introduction, widget: markdown }
-      - label: "footer"
-        name: "footer"
-        file: "content/footer.yml"
-        fields:
-          - { label: copyright, name: copyright, widget: string }
-  - name: "contact"
-    label: "contact"
-    folder: "content/_contact/"
+          - name: languages
+            widget: list
+            fields:
+            - { name: language, widget: string }
+            - { name: siteName, widget: string }
+            - { name: introduction, widget: text }
+            - { name: aboutHeader, widget: string }
+            - { name: experienceHeader, widget: string }
+            - { name: contactHeader, widget: string }
+            - { name: contactIntroduction, widget: text }
+            - { name: copyright, widget: string }
+  - name: "about"
+    label: "about"
+    description: "more info about myself/work/life"
+    folder: "content/_about/"
     create: true
     fields:
-      - { label: icon, name: icon, widget: string }
-      - { label: link, name: link, widget: string }
-      - { label: title, name: title, widget: string }
-      - { label: handle, name: handle, widget: string, required: false }
-  - label: "label"
-    name: "label"
-    folder: "content/_label/"
-    create: true
-    fields:
-      - { label: icon, name: icon, widget: string }
-      - { label: title, name: title, widget: string }
-  - label: "experience"
-    name: "experience"
+      - { name: language, widget: string }
+      - { name: title, widget: string }
+      - { name: memo, widget: markdown }
+      - { name: tags, widget: relation, collection: tag, valueField: tag.*, searchFields: [tag.title] }
+  - name: "experience"
+    label: "experience"
+    description: "work and education experience in development"
     folder: "content/_experience/"
     create: true
     fields:
-      - { label: from, name: from, widget: datetime }
-      - { label: to, name: to, widget: datetime }
-      - { label: title, name: title, widget: string }
-      - { label: memo, name: memo, widget: markdown }
-      - { label: link, name: link, widget: string, required: false }
-      - {
-        label: labels,
-        name: labels,
-        widget: relation,
-        collection: label,
-        valueField: label.*,
-        searchFields: [label.title]
-      }
+      - { name: language, widget: string }
+      - { name: from, widget: datetime }
+      - { name: to, widget: datetime }
+      - { name: title, widget: string }
+      - { name: memo, widget: markdown }
+      - { name: link, widget: string, required: false }
+      - { name: tags, widget: relation, collection: tag, valueField: tag.*, searchFields: [tag.title] }
+  - name: "contact"
+    label: "contact"
+    desciption: "ways of contacting me"
+    folder: "content/_contact/"
+    create: true
+    fields:
+      - { name: language, widget: string }
+      - { name: icon, widget: string }
+      - { name: link, widget: string }
+      - { name: title, widget: string }
+      - { name: handle, widget: string, required: false }
+  - name: "tag"
+    label: "tags"
+    description: "tags to emphasise and link other content"
+    folder: "content/_tag/"
+    create: true
+    fields:
+      - { name: icon, widget: string }
+      - { name: title, widget: string }
