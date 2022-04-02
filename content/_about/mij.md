@@ -9,9 +9,8 @@ memo: >-
   Altijd te porren voor een potje volleybal, een theaterbezoek of een kampeertrip. Zo niet als zomerkampleider, danwel in een omgebouwd kampeerbusje. 
 
 
-  Bovenal sociaal, creatief en enthousiast.
+  Houdt van spelletjes, huisdieren, koken, kunst en z'n vrienden.
 tags:
-  - transman
   - kamperen
   - theater & improvisatie
   - schaken
